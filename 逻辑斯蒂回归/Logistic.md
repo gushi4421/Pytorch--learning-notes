@@ -1,4 +1,5 @@
-### Total Code:
+### [Total Code](Logistic.py):
+
 ``` python
 import torch.nn.functional as F
 import torch
@@ -29,6 +30,5 @@ for epoch in range(1, 1001):
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()  # update parameters
-
 
 ```

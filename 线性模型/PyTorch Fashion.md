@@ -13,7 +13,7 @@
 __In PyTorch,the computational graph is in mini-batch fashion,soX and T are 3*1 Tensors.__
 
 #### To be honest,this my first time to use torch to design my code.Therefore,I record many details.
-### total code : 
+### [Total code](PyTorch%20Fashion.py) : 
 ``` python
 import torch
 

@@ -1,8 +1,12 @@
-## Pytorch learning notes
+# Pytorch learning notes
 
 [My github](https://github.com/gushi4421)
+
 [Article](https://www.runoob.com/pytorch/pytorch-tutorial.html)
 
 [Video](https://www.bilibili.com/video/BV1Y7411d7Ys/?spm_id_from=333.337.search-card.all.click&vd_source=ead53ca20e9e27a6ff5e2e93b0aae7df)
 
-# Pytorch--learning-notes
+
+## Navigate:
+[Linear](线性模型/PyTorch%20Fashion.md)
+[Logistic](逻辑斯蒂回归/Logistic.md)

@@ -6,7 +6,7 @@ y_data = torch.tensor([[0.0], [0.0], [1.0]])
 
 
 class LogisticRegressionModel(torch.nn.Module):
-    def __init___(self):
+    def __init__(self):
         super(LogisticRegressionModel, self).__init__()
         self.linear = torch.nn.Linear(1, 1)
 
