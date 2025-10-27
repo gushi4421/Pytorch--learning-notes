@@ -62,7 +62,7 @@ criterion = torch.nn.BCELoss(size_average=False)
 optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 ```
 #### BCELoss:
-![BCELoss](image.png)
+![BCELoss](BCELoss.png)
 ### 4. Training Cycle
 ``` python
 for epoch in range(1, 101):

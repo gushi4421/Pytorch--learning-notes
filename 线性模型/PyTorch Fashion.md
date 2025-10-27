@@ -10,7 +10,7 @@
 ##### forward,backward,update
 
 
-__In PyTorch,the computational graph is in mini-batch fashion,soX and T are 3*1 Tensors.__
+__In PyTorch,the computational graph is in mini-batch fashion,so X and T are 3*1 Tensors.__
 
 #### To be honest,this my first time to use torch to design my code.Therefore,I record many details.
 ### [Total code](PyTorch%20Fashion.py) : 
@@ -54,10 +54,15 @@ print("Predict (after training)", 4, y_test.item())
 
 ```
 
+### 1. Prepare Dataset
+``` python
+x_data = torch.tensor([[1.0], [2.0], [3.0]])
+y_data = torch.tensor([[2.0], [4.0], [6.0]])
+```
+__Just some test data.__
 ### 2. Design Model
 ``` python
 class LinearModel(torch.nn.Module): # nn neural network
-
 ```
 >___Our model class should be inherited from nn.Module,which is Base class for all neural network modules.___
 
