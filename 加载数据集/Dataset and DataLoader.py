@@ -4,6 +4,7 @@ from torch.utils.data import DataLoader
 import numpy as np
 
 
+# 1.Prepare Dataset
 class DiabetesDataset(Dataset):
     def __init__(self, file_path):
         xy = np.loadtxt(file_path, delimiter=",", dtype=np.float64)
@@ -21,6 +22,7 @@ dataset = DiabetesDataset("diabetes.csv.gz")
 train_loader = DataLoader(dataset=dataset, batch_size=32, shuffle=True, num_workers=2)
 
 
+# 2.Create Model
 class Model(torch.nn.Module):
     def __init__(self):
         super(Model, self).__init__()
@@ -38,9 +40,11 @@ class Model(torch.nn.Module):
 
 model = Model()
 
+# 3.Construct loss and optimizer
 criterion = torch.nn.Sigmoid()  # Loss Function
 optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 
+# 4.Training Cycle
 for epoch in range(1, 101):
     for i, data in enumerate(train_loader, 0):
         # 1. Prepare data
@@ -49,8 +53,8 @@ for epoch in range(1, 101):
         y_pred = model(inputs)
         loss = criterion(y_pred, labels)
         print(epoch, i, loss.item())
-        #3. Backward
+        # 3. Backward
         optimizer.zero_grad()
         loss.backward()
-        #4. Update
+        # 4. Update
         optimizer.step()

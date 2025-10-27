@@ -1,4 +1,9 @@
 import torch
+import numpy as np
+
+xy = np.loadtxt("diabetes.csv.gz", delimiter=",", dtype=np.float32)
+x_data = torch.from_numpy(xy[:, :-1])
+y_data = torch.from_numpy(xy[:, [-1]])
 
 
 class Model(torch.nn.Module):
@@ -19,7 +24,15 @@ class Model(torch.nn.Module):
 model = Model()
 
 criterion = torch.nn.BCELoss(size_average=True)
-for epoch in range(1, 1001):
-    y_pred=model()
-for epoch in range(1, 1001):
-    y_pred = model()
+optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
+
+for epoch in range(1, 101):
+    # Forward
+    y_pred = model(x_data)
+    loss = criterion(y_pred, y_data)
+    print(epoch, loss.item())
+    # Backward
+    optimizer.zero_grad()
+    loss.backward()
+    # Update
+    optimizer.step()

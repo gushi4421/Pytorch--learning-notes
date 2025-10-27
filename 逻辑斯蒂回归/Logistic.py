@@ -20,7 +20,7 @@ model = LogisticRegressionModel()
 criterion = torch.nn.BCELoss(size_average=False)
 optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 
-for epoch in range(1, 1001):
+for epoch in range(1, 101):
     y_pred = model(x_data)
     loss = criterion(y_pred, y_data)
     print("Epoch:", epoch, "loss=", loss.item())

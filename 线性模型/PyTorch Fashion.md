@@ -37,7 +37,7 @@ criterion = torch.nn.MSELoss(size_average=False)
 optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 
 
-for epoch in range(1, 1001):
+for epoch in range(1, 101):
     y_pred = model(x_data)
     loss = criterion(y_pred, y_data)
     print("Epoch:", epoch, "loss=", loss.item())
@@ -115,7 +115,8 @@ criterion = torch.nn.MSELoss(size_average=False)
 ``` python
 optimizer = torch.optim.SGD(model.parameters(),lr=0.01)
 ```
-> __class torch.optim.SGD(params,lr=<object object>,momentum=0,dampening=0,weight_decay=0,nesterov=False)__
+
+> __class torch.optim.SGD(params,lr=\<object object\>,momentum=0,dampening=0,weight_decay=0,nesterov=False)__
 >>__Implements stochastic gradient descent (optionally with momentum).__
 
 >__Parameters:__ 
@@ -125,8 +126,9 @@ optimizer = torch.optim.SGD(model.parameters(),lr=0.01)
 
 
 ### 4. Training Cycle
+
 ``` python 
-for epoch in range(1, 1001):
+for epoch in range(1, 101):
     y_pred = model(x_data)
     loss = criterion(y_pred, y_data)
     print("Epoch:", epoch, "loss=", loss.item())
