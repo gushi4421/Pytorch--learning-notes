@@ -54,7 +54,6 @@ print("b=", model.linear.bias.item())
 x_test = torch.tensor([[4.0]])
 y_test = model(x_test)
 print("Predict (after training)", 4, y_test.item())
-
 ```
 
 ### 1. Prepare Dataset
@@ -76,7 +75,6 @@ class LinearModel(torch.nn.Module): # nn neural network
 def __init__(self):
         super(LinearModel, self).__init__() 
         self.linear = torch.nn.Linear(1, 1)
-
 ```
 
 >__for super:__
@@ -143,7 +141,6 @@ for epoch in range(1, 101):
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
-
 ```
 
 y_pred = model(x_data)[^2]

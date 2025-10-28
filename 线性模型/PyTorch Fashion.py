@@ -13,7 +13,6 @@ class LinearModel(torch.nn.Module):  # nn == neural network
         y_pred = self.linear(x)
         return y_pred
 
-
 model = LinearModel()
 
 print(f"w={model.linear.weight},b={model.linear.bias}")

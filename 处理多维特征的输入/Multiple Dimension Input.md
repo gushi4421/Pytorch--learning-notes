@@ -53,10 +53,13 @@ y_data = torch.from_numpy(xy[:, [-1]])
 >>__Read data from "diabetes.csv.gz",using "," to split data.
 Type is np.float32.__
 
->___x_data = torch.from_numpy(xy[:, :-1])___
+>___x_data = torch.from_numpy(xy[:, :-1])
+>y_data = torch.from_numpy(xy[:,[-1]])___
 >>__Get data from the form -- numpy.
 >>The meaning of ":" is geting the whole row or column.
->>The meaning of "-1" is geting all rows or columns from the last second row or columns.__
+>>The meaning of "-1" is geting the last row or column.
+>>The meaning of ":-1" is geting all the rows or columns from the begining of last second row or column.
+>>The meaning of "[-1]" is geting the last row or column as 2D structure__
 
 ### 2. Build Model
 ``` python
