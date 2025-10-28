@@ -1,4 +1,4 @@
-### [Total Code](Logistic.py):
+## [Total Code](Logistic.py):
 
 ``` python
 import torch.nn.functional as F

@@ -1,4 +1,4 @@
-### PyTorch--learning notes
+## PyTorch--learning notes
 
 #### 1.Prepare dataset
 ##### we will share this later
@@ -13,7 +13,10 @@
 __In PyTorch,the computational graph is in mini-batch fashion,so X and T are 3*1 Tensors.__
 
 #### To be honest,this my first time to use torch to design my code.Therefore,I record many details.
-### [Total code](PyTorch%20Fashion.py) : 
+
+![alt text](Linear.png)
+
+## [Total code](PyTorch%20Fashion.py) : 
 ``` python
 import torch
 

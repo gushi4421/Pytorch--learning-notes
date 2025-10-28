@@ -47,15 +47,37 @@ class Net(torch.nn.Module):
 model = Net()
 
 criterion = torch.nn.CrossEntropyLoss()
-optimizer = optim.SGD(Net.parameters(), lr=0.01)
+optimizer = optim.SGD(model.parameters(), lr=0.01)
 
 
 def train():
-    pass
+    running_loss = 0.0
+    for batch_idx, data in enumerate(train_loader, 0):
+        inputs, target = data
+        optimizer.zero_grad()
+
+        outputs = model(inputs)
+        loss = criterion(outputs, target)
+        loss.backward()
+        optimizer.step()
+
+        running_loss += loss.item()
+        if batch_idx % 300 == 299:
+            print("[%d,%5d] loss:%.3f" % (epoch + 1, batch_idx + 1, running_loss / 300))
+            running_loss = 0.0
 
 
 def test():
-    pass
+    correct = 0
+    total = 0
+    with torch.no_grad():
+        for data in test_loader:
+            images, labels = data
+            outputs = model(images)
+            _, predicted = torch.max(outputs.data, dim=1)
+            total += labels.size(0)
+            correct += (predicted == labels).sum().item()
+    print("Accuracy on test set: %d %%" % (100 * correct / total))
 
 
 if __name__ == "__Softmax Classifier__":
