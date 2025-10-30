@@ -8,6 +8,7 @@ import numpy as np
 class DiabetesDataset(Dataset):
     def __init__(self, file_path):
         xy = np.loadtxt(file_path, delimiter=",", dtype=np.float64)
+        self.len = xy.shape[0]
         self.x_data = torch.from_numpy(xy[:, :-1])
         self.y_data = torch.from_numpy(xy[:, [-1]])
 
@@ -41,7 +42,7 @@ class Model(torch.nn.Module):
 model = Model()
 
 # 3.Construct loss and optimizer
-criterion = torch.nn.Sigmoid()  # Loss Function
+criterion = torch.nn.BCELoss()  # Loss Function
 optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 
 # 4.Training Cycle

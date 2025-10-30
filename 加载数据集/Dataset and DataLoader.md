@@ -12,6 +12,7 @@ import numpy as np
 class DiabetesDataset(Dataset):
     def __init__(self, file_path):
         xy = np.loadtxt(file_path, delimiter=",", dtype=np.float64)
+        self.len=xy.shape[0]
         self.x_data = torch.from_numpy(xy[:, :-1])
         self.y_data = torch.from_numpy(xy[:, [-1]])
 
@@ -85,7 +86,12 @@ dataset = DiabetesDataset("diabetes.csv.gz")
 train_loader = DataLoader(dataset=dataset, batch_size=32, shuffle=True, num_workers=2)
 ```
 __This part is different from [Multiple Dimension Input](../处理多维特征的输入/Multiple%20Dimension%20Input.py).We take it as a class.__
+>___Dataset___
+>>__Dataset is a class,which is an abstract class.We can define out class inherited from this class.__  
+>>__DatabetesDataset is inherited from abstract class Dataset.__
 
+>___DataLoader___
+>>__DataLoader is a class to help us loading data in PyTorch.__
 
 ### 2. Design Dataset
 ``` python
@@ -110,7 +116,7 @@ model = Model()
 
 ### 3. Construct Loss and Optimizer
 ``` python
-criterion = torch.nn.Sigmoid()  # Loss Function
+criterion = torch.nn.BCELoss()  # Loss Function
 optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 ```
 
