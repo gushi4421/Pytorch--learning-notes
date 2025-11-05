@@ -8,7 +8,6 @@
 
 [Video](https://www.bilibili.com/video/BV1Y7411d7Ys/?spm_id_from=333.337.search-card.all.click&vd_source=ead53ca20e9e27a6ff5e2e93b0aae7df)
 
-
 ## Navigate:
 [Linear](线性模型/PyTorch%20Fashion.md)  
 
@@ -21,3 +20,8 @@
 [Softmax Classifier](多分类问题/Softmax%20Classifier.md)
 
 ## 未完待续...
+
+### Now:
+#### I'm pay attention to studying basic pytorch operations.
+#### So,I plan to take a break from updating for a while.
+__[Click here](https://github.com/gushi4421/Basic-PyTorch) to learn more about Pytorch.__
